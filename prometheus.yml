@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 15s  # Опрос метрик каждые 15 секунд
+
+scrape_configs:
+  - job_name: 'exporter'
+    metrics_path: '/'  # Путь, по которому Prometheus будет запрашивать метрики
+    static_configs:
+      - targets: [ 'localhost:8081' ] # Ваш экспортер (На Linux необходимо использовать IP хоста вместо localhost, см. README)
